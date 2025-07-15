@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Naftal's Finance Tracker</h1>
+    <form id="entryForm">
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="type">
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+      </select>
+      <input type="text" id="description" placeholder="Description" />
+      <button type="submit">Add Entry</button>
+    </form>
+    <div class="summary">
+      <p>Total Income: <span id="totalIncome">0</span></p>
+      <p>Total Expenses: <span id="totalExpense">0</span></p>
+      <p>Balance: <span id="balance">0</span></p>
+    </div>
+    <ul id="entryList"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

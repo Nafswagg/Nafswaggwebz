@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input, select, button {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+.summary p {
+  font-weight: bold;
+}
+#entryList {
+  list-style: none;
+  padding: 0;
+}
+#entryList li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
