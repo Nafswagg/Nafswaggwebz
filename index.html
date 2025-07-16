@@ -3,28 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Finance Tracker</title>
+  <title>Finance Tracker Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Naftal's Finance Tracker</h1>
-    <form id="entryForm">
-      <input type="number" id="amount" placeholder="Amount" required />
-      <select id="type">
-        <option value="Income">Income</option>
-        <option value="Expense">Expense</option>
-      </select>
-      <input type="text" id="description" placeholder="Description" />
-      <button type="submit">Add Entry</button>
+  <div class="login-container">
+    <h2>Login to Finance Tracker</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
     </form>
-    <div class="summary">
-      <p>Total Income: <span id="totalIncome">0</span></p>
-      <p>Total Expenses: <span id="totalExpense">0</span></p>
-      <p>Balance: <span id="balance">0</span></p>
-    </div>
-    <ul id="entryList"></ul>
+    <p id="loginMessage"></p>
   </div>
+
+  <div class="app" style="display:none">
+    <div class="container">
+      <h1>Welcome, <span id="userRole"></span></h1>
+      <form id="entryForm">
+        <input type="number" id="amount" placeholder="Amount" required />
+        <select id="type">
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
+        </select>
+        <input type="text" id="description" placeholder="Description" />
+        <button type="submit">Add Entry</button>
+      </form>
+
+      <div class="filters">
+        <label for="filterDate">Filter by Month:</label>
+        <input type="month" id="filterDate">
+        <button onclick="exportCSV()">Export to CSV</button>
+      </div>
+
+      <div class="summary">
+        <p>Total Income: <span id="totalIncome">0</span></p>
+        <p>Total Expenses: <span id="totalExpense">0</span></p>
+        <p>Balance: <span id="balance">0</span></p>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="financeChart" width="300" height="150"></canvas>
+      </div>
+
+      <ul id="entryList"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
